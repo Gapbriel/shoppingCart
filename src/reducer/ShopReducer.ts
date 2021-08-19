@@ -44,12 +44,13 @@ const ShopReducer = (state: ShopStore, action: Action<TypeAction>): ShopStore =>
         },
       };
     case 'REMOVE_TO_CART':
+      const newArrayProducts = findAndRemoveOrDecreaseAmount(products, action.payload as String);
       return {
         ...state,
         cartList: {
-          products: findAndRemoveOrDecreaseAmount(products, action.payload as String),
+          products: newArrayProducts,
           count: count - 1,
-          totalPrice: products.reduce((acc, item) => item.price * item.amount + acc, 0),
+          totalPrice: newArrayProducts.reduce((acc, item) => item.price * item.amount + acc, 0),
         },
       };
     default:
