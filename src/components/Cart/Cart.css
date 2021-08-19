@@ -1,0 +1,19 @@
+.cart-container {
+  opacity: 1;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  min-height: 97vh;
+  /* set height as you need */
+  border: 0.25px solid gainsboro;
+}
+.cart-container .cart-title {
+  margin: 10px;
+}
+.cart-container .cart-list-container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0px, 3fr));
+}
+.cart-container .cart-list-totals {
+  justify-content: flex-end;
+}
