@@ -22,7 +22,7 @@ function findAndRemoveOrDecreaseAmount(products: Product[], sku: String): Produc
       }
     } else {
       //if i don't found it , return the acc
-      return acc;
+      return [...acc, product];
     }
   }, [] as Product[]);
 }
